@@ -8,7 +8,10 @@
       <meta name="description" content="Hello, WebVR! - A-Frame">
       <!--  note we are using 0.9.1 as most recent -->
       <script src="https://aframe.io/releases/1.0.3/aframe.min.js"></script>
-      <script src="js/button.js"></script>
+      <script src="js/button_red.js"></script>
+      <script src="js/button_blue.js"></script>
+      <script src="js/button_yellow.js"></script>
+      <script src="js/button_green.js"></script>
 
     </head>
     <body>
@@ -33,28 +36,31 @@
                     scale="1 1 1" 
                     rotation="0 0 0"
                     material="color:#FF0000;"
-                    button-component="" ></a-entity>
+                    red-component="" ></a-entity>
 
         <a-entity id="green" class="clickable"
                     geometry="primitive:plane; width:10; height:10; "
                     position="5 5 0"
                     scale="1 1 1" 
                     rotation="0 0 0"
-                    material="color:#00FF00;"></a-entity>
+                    material="color:#00FF00;"
+                    green-component="" ></a-entity>
 
         <a-entity id="blue" class="clickable"
                     geometry="primitive:plane; width:10; height:10; "
                     position="5 -5 0"
                     scale="1 1 1" 
                     rotation="0 0 0"
-                    material="color:#0000FF;"></a-entity>
+                    material="color:#0000FF;"
+                    blue-component="" ></a-entity>
 
         <a-entity id="yellow" class="clickable"
                     geometry="primitive:plane; width:10; height:10; "
                     position="-5 -5 0"
                     scale="1 1 1" 
                     rotation="0 0 0"
-                    material="color:#FFFF00;"></a-entity>
+                    material="color:#FFFF00;"
+                    yellow-component="" ></a-entity>
       </a-scene>
     </body>
 </html>

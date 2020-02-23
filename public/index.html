@@ -16,9 +16,6 @@
 
     </head>
     <body>
-      
-
-
       <a-scene>
         <a-assets>
 
@@ -77,14 +74,28 @@
               console.log("connected!");
           });
 
-          socket.on('color_change', function(data) {
-              //create rgb color string for css
-              let colorStr = 'rgb(' + data.r + ',' + data.g + ',' + data.b + ')';
-              console.log("color received: " + colorStr);
-
-              //set background color with received color
-              document.body.style.backgroundColor = colorStr;
+          //let's send some events to the server to pass on. Programmatic telephone game!
+          //querySelector() is a more modern and versatile function of getElementById()
+          //#name or class
+          //.name for classes
+          //etc.
+          //https://developer.mozilla.org/en-US/docs/Web/API/Document/querySelector 
+          //note that querySelector can also be used on elements so that you only search for their children
+          //instead of all elements within teh "document"
+          document.querySelector('#red').addEventListener('click', function() {
+              socket.emit('red');
           });
+
+          document.querySelector('#green').addEventListener('click', function() {
+              socket.emit('green');
+          });
+
+          document.querySelector('#blue').addEventListener('click', function() {
+              socket.emit('blue');
+          
+          document.querySelector('#yellow').addEventListener('click', function() {
+              socket.emit('yellow');
+});
       </script>
     </body>
 </html>

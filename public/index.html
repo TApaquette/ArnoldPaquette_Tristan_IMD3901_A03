@@ -12,9 +12,13 @@
       <script src="js/button_blue.js"></script>
       <script src="js/button_yellow.js"></script>
       <script src="js/button_green.js"></script>
+      
 
     </head>
     <body>
+      
+
+
       <a-scene>
         <a-assets>
 
@@ -62,5 +66,25 @@
                     material="color:#FFFF00;"
                     yellow-component="" ></a-entity>
       </a-scene>
+
+
+      <script src="/socket.io/socket.io.js"></script>
+      <script>
+          let socket = io();
+
+          //default connect event
+          socket.on('connect', function() {
+              console.log("connected!");
+          });
+
+          socket.on('color_change', function(data) {
+              //create rgb color string for css
+              let colorStr = 'rgb(' + data.r + ',' + data.g + ',' + data.b + ')';
+              console.log("color received: " + colorStr);
+
+              //set background color with received color
+              document.body.style.backgroundColor = colorStr;
+          });
+      </script>
     </body>
 </html>
